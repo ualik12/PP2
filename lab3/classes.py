@@ -88,7 +88,7 @@ class Bank:
         owner.balanc = money
 
     def balance(owner):
-        print(f'balance: {self.balanc}')
+        print(f'balance: {owner.balanc}')
 
     def deposit(owner, dep):
         owner.balanc += dep
