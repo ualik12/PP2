@@ -69,7 +69,7 @@ reverse(a)"""
 #task7
 def has_33(numbs):
     i = 0
-    while i < len(numbs)-1:
+    while i < len(numbs):
         if numbs[i] == 3:
             if numbs[i+1] == 3:
                 return True
@@ -167,7 +167,10 @@ def find_num_random(rand_num, count):
     if num == rand_num:
         print(f'Good job, KBTU! You guessed my number in {count} guesses!')
         return
-    print('\nYour guess is too low.')
+    if num < rand_num:
+        print('\nYour guess is too low.')
+    elif num > rand_num:
+        print('\nYour guess is too large.')
     return find_num_random(rand_num, count)
 
 '''name = input('Hello! What is your name?\n')

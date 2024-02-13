@@ -42,7 +42,6 @@ print("square:", square.area())
 class Rectangle(Shape):
     def __init__(self, length, width):
         super().__init__()
-        self.length = length
         self.width = width
 
     def area(self):
@@ -85,23 +84,23 @@ print(f'dist: {p1.dist(p2)}')
 
 #task5
 class Bank:
-    def __init__(self, money):
-        self.balanc = money
+    def __init__(owner, money):
+        owner.balanc = money
 
-    def balance(self):
+    def balance(owner):
         print(f'balance: {self.balanc}')
 
-    def deposit(self, dep):
-        self.balanc += dep
-        print(f'deposit of {dep} successfully made. New balance: {self.balanc}')
+    def deposit(owner, dep):
+        owner.balanc += dep
+        print(f'deposit of {dep} successfully made. New balance: {owner.balanc}')
 
-    def withdraw(self, wit):
-        if self.balanc < wit:
+    def withdraw(owner, wit):
+        if owner.balanc < wit:
             print('insufficient funds!')
         
         else:
-            self.balanc -= wit
-            print(f'withdrawal of {wit} successfully made. New balance: {self.balanc}')
+            owner.balanc -= wit
+            print(f'withdrawal of {wit} successfully made. New balance: {owner.balanc}')
 
 
 user = Bank(1000)
