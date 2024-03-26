@@ -26,6 +26,8 @@ def list_directories_files(path):
         print(entry)
 
 
-your_path = "text.txt"
+your_path = (
+    r"/Users/ualihanbisenev/Desktop/File_cabinet/KBTU/PP2/lab6/dir-and-files/text.txt"
+)
 
 list_directories_files(your_path)
