@@ -27,7 +27,7 @@ COLOR = [RED, BLACK, WHITE, GREEN, BLUE]
 
 
 LMBPressed = False
-
+screen.fill(WHITE)
 
 def calculate_rect(x1, x2, y1, y2):
     return pygame.Rect(min(x1, x2), min(y1, y2), abs(x1 - x2), abs(y1 - y2))
@@ -52,6 +52,11 @@ while not done:
             if LMBPressed:
                 currX = event.pos[0]
                 currY = event.pos[1]
+            if counter_figurs == -1:
+                pygame.draw.circle(screen, COLOR[counter_color], event.pos, 25)
+            
+            if counter_figurs == 2:
+                pygame.draw.circle(screen, WHITE, event.pos, 25)
 
         if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             print("LMB was released!")
@@ -60,6 +65,7 @@ while not done:
             baseLayer.blit(screen, (0, 0))
             currX = event.pos[0]
             currY = event.pos[1]
+
 
     pressed = pygame.key.get_pressed()
     if pressed[pygame.K_p]:
@@ -93,12 +99,4 @@ while not done:
             pygame.draw.circle(
                 screen, COLOR[counter_color], (prevX, prevY), radius, 2
             )
-    if counter_figurs == -1:
-        screen.blit(baseLayer, (0, 0))
-        pygame.draw.circle(
-            screen, COLOR[counter_color], (prevX, prevY, ), radius, 2
-        )
-
-    # screen.blit(baseLayer, (0, 0))
-
     pygame.display.flip()
