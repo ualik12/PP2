@@ -18,6 +18,9 @@ currY = -1
 counter_figurs = -1
 counter_color = 0
 
+FPS = 60
+clock = pygame.time.Clock()
+
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
@@ -99,4 +102,5 @@ while not done:
             pygame.draw.circle(
                 screen, COLOR[counter_color], (prevX, prevY), radius, 2
             )
+    clock.tick(FPS)
     pygame.display.flip()

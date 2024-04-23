@@ -60,8 +60,7 @@ screen.fill(GRAY)
 ms = [
     "/Users/ualihanbisenev/Desktop/File_cabinet/KBTU/PP2/lab7/BG/m1.mp3",
     "/Users/ualihanbisenev/Desktop/File_cabinet/KBTU/PP2/lab7/BG/m2.mp3",
-    "/Users/ualihanbisenev/Desktop/File_cabinet/KBTU/PP2/lab7/BG/m3.mp3",
-]
+    "/Users/ualihanbisenev/Desktop/File_cabinet/KBTU/PP2/lab7/BG/m3.mp3",]
 current_track = 0
 
 def play_music(current_track=0):
